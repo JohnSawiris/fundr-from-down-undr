@@ -1,0 +1,30 @@
+{ "projects": [
+    {
+      "name": "New Gadget",
+      "manager": "Tom Sawyer",
+      "description": "I have a new gadget, help me make it a product you can buy!",
+      "moneyNeeded": "2500",
+      "moneyFunded": "37",
+      "intentions": "I will take this money and make a doo-dad",
+      "rewards": "If you fund $20 you get a t-shirt with the gadget on it. If you fund $40 you get the gadget."
+    },
+    {
+      "name": "BigClown",
+      "manager": "Matthew Hogan",
+      "description": " the best IoT kit in the galaxy. BigClown will help you to build your own electronics. The kit modular, wireless, open-source, running on batteries for years and with support",
+      "moneyNeeded": "3000",
+      "moneyFunded": "150",
+      "intentions": "Start creating your smart gadgets. It is as simple as building a castle from LEGO® bricks or an IKEA® cabinet",
+      "rewards": "If you fund $100 you get a BigCown 50%"
+    },
+    {
+      "name": "Evo-X Chair",
+      "manager": "Brian Willson",
+      "description": "Evo-X Chair is designed to correct bad posture while eliminating back issues",
+      "moneyNeeded": "6000",
+      "moneyFunded": "2500",
+      "intentions": "I will use this money to produce more of them",
+      "rewards": "If you fund a $200 you get 25% of Evo-X-Chair"
+    }
+  ]
+}
