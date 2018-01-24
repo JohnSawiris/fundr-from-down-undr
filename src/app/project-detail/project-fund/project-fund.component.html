@@ -1,0 +1,9 @@
+<div >
+  <input #contributorName>
+  <input #amountUSD>
+  <input #comment>
+  <button (click)="submitForm(contributorName.value, amountUSD.value, comment.value);
+    contributorName.value='';
+    amountUSD.value='';
+    comment.value='';">Submit!</button>
+</div>

@@ -1,3 +1,15 @@
-<p>
-  project-detail works!
-</p>
+<div >
+  <h1>Project : {{(project | async)?.name}}</h1>
+  <h3>Manager : {{(project | async)?.manager}}</h3>
+  <h3>Description : {{(project | async)?.description}}</h3>
+</div>
+<div>
+  <button *ngIf="!selectedProjectKey" (click)="fundButtonClicked()">Fund This Project</button>
+  <app-project-fund *ngIf="selectedProjectKey" [childSelectedProjectKey]="selectedProjectKey"></app-project-fund>
+</div>
+
+<div *ngFor="let contribution of (project | async)?.contributions">
+  <h4>{{contribution.contributorName}}</h4>
+  <h4>{{contribution.amountUSD}}</h4>
+  <p>{{contribution.comment}}</p>
+</div>
