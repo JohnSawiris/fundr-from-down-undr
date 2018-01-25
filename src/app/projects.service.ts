@@ -30,4 +30,8 @@ export class ProjectsService {
     const contributionsEntryInFirebase = this.getContributionsById(projectId);
     contributionsEntryInFirebase.push({contributorName: name, comment: comment, amountUSD: amount});
   }
+
+  deleteContribution(projectId, contributionKey) {
+    this.database.object(`projects/${projectId}/contributions/${contributionKey}`).remove();
+  }
 }

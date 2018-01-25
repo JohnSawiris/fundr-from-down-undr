@@ -3,7 +3,6 @@
   <h3>Manager : {{project?.manager}}</h3>
   <h3>Description : {{project?.description}}</h3>
   <h3>key : {{project?.$key}}</h3>
-  <div>{{project?.contributions[0].$key}}
 </div>
 <div>
   <button *ngIf="!selectedProjectKey" (click)="fundButtonClicked()">Fund This Project</button>
@@ -14,4 +13,6 @@
   <h4>{{contribution.contributorName}}</h4>
   <h4>{{contribution.amountUSD}}</h4>
   <p>{{contribution.comment}}</p>
+  <p>{{contribution.$key}}</p>
+  <button *ngIf="currentRoute === '/admin'" (click)="contributionToDelete(projectId, contribution.$key)">Delete</button>
 </div>

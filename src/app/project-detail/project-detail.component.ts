@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FirebaseObjectObservable } from 'angularfire2/database';
 
@@ -18,7 +18,10 @@ export class ProjectDetailComponent implements OnInit {
   projectId: string;
   selectedProjectKey: string = null;
 
+  currentRoute: string = this.currRoute.url;
+
   constructor(
+    private currRoute: Router,
     private projectsService: ProjectsService,
     private route: ActivatedRoute
   ) { }
@@ -27,9 +30,11 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
+
     this.projectsService.getProjectById(this.projectId).subscribe(projectLastEmitted => {
       this.project = projectLastEmitted;
     });
+
     this.projectsService.getContributionsById(this.projectId).subscribe(contributionsLastEmitted => {
       this.projectContributions = contributionsLastEmitted;
     })
@@ -38,5 +43,9 @@ export class ProjectDetailComponent implements OnInit {
 
   fundButtonClicked() {
     this.selectedProjectKey = this.projectId;
+  }
+
+  contributionToDelete(projectId, contributionKey) {
+    this.projectsService.deleteContribution(projectId, contributionKey);
   }
 }
