@@ -1,3 +1,15 @@
-<div *ngFor="let project of projects | async" (click)="showProject(project.$key)">
+<select (change)="filterByValue($event.target.value)">
+  <option value="allProjects" selected="selected">All Projects</option>
+  <option value="charity">Projects for Charity</option>
+  <option value="product">Projects for Products</option>
+  <option value="name">Search by Project Name</option>
+</select>
+
+<div *ngIf="showNameInput">
+  <input (keyup)="filterByName($event.target.value)">
+</div>
+
+
+<div *ngFor="let project of projects | async | searchBy:filter" (click)="showProject(project.$key)">
   <h3>{{project.name}}</h3>
 </div>

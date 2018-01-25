@@ -17,6 +17,8 @@ import { ProjectsService } from '../projects.service';
 export class ProjectListComponent implements OnInit {
 
   projects: FirebaseListObservable<any[]>;
+  filter: string[] = [];
+  showNameInput: boolean = false;
 
   constructor(
     private projectsService: ProjectsService,
@@ -25,10 +27,23 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectsService.getProjects();
+    
   }
 
   showProject(projectId) {
     this.router.navigate(['projects', projectId]);
   }
 
+  filterByValue(filterValue) {
+    this.filter = [filterValue, ''];
+    if (filterValue !== "name") {
+      this.showNameInput = false;
+    } else if (filterValue === "name") {
+      this.showNameInput = true;
+    }
+  }
+
+  filterByName(name) {
+    this.filter[1] = name;
+  }
 }

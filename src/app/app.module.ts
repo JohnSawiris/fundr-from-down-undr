@@ -9,6 +9,10 @@ import { AppComponent } from './app.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { routing } from './app.routing';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { SearchByPipe } from './search-by.pipe';
+import { ProjectFundComponent } from './project-detail/project-fund/project-fund.component';
+import { HeaderComponent } from './header/header.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,7 +25,10 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     ProjectListComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    SearchByPipe,
+    ProjectFundComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ export class Project {
     public moneyNeeded: string,
     public moneyFunded: string,
     public intentions: string,
-    public rewards: string
+    public rewards: string,
+    public type: string,
+    public contributions: any[]
   ) {}
 }

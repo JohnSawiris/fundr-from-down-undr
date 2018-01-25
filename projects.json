@@ -6,7 +6,13 @@
       "moneyNeeded": "2500",
       "moneyFunded": "37",
       "intentions": "I will take this money and make a doo-dad",
-      "rewards": "If you fund $20 you get a t-shirt with the gadget on it. If you fund $40 you get the gadget."
+      "rewards": "If you fund $20 you get a t-shirt with the gadget on it. If you fund $40 you get the gadget.",
+      "type": "product",
+      "contributions": [{
+          "contributorName": "James N.",
+          "amountUSD": "55",
+          "comment": "This is great, I totally needed a new gadget, it sounds like someone is finally listening!"
+        }]
     },
     {
       "name": "BigClown",
@@ -15,7 +21,18 @@
       "moneyNeeded": "3000",
       "moneyFunded": "150",
       "intentions": "Start creating your smart gadgets. It is as simple as building a castle from LEGO® bricks or an IKEA® cabinet",
-      "rewards": "If you fund $100 you get a BigCown 50%"
+      "rewards": "If you fund $100 you get a BigCown 50%",
+      "type": "product",
+      "contributions": [{
+          "contributorName": "Bailey F.",
+          "amountUSD": "45",
+          "comment": "Finally! An IoT kit for my skill level!"
+        },
+        {
+          "contributorName": "Roger C.",
+          "amountUSD": "12",
+          "comment": "I can't wait for my BigClown!"
+        }]
     },
     {
       "name": "Evo-X Chair",
@@ -24,7 +41,9 @@
       "moneyNeeded": "6000",
       "moneyFunded": "2500",
       "intentions": "I will use this money to produce more of them",
-      "rewards": "If you fund a $200 you get 25% of Evo-X-Chair"
+      "rewards": "If you fund a $200 you get 25% of Evo-X-Chair",
+      "type": "charity",
+      "contributions": []
     }
   ]
 }
