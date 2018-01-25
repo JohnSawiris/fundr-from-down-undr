@@ -30,7 +30,7 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-
+    
     this.projectsService.getProjectById(this.projectId).subscribe(projectLastEmitted => {
       this.project = projectLastEmitted;
     });

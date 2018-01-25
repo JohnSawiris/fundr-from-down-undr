@@ -27,11 +27,15 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectsService.getProjects();
-    
+
   }
 
   showProject(projectId) {
-    this.router.navigate(['projects', projectId]);
+    if (this.router.url === '/admin') {
+      this.router.navigate(['admin/projects', projectId])
+    } else {
+      this.router.navigate(['projects', projectId]);
+    }
   }
 
   filterByValue(filterValue) {

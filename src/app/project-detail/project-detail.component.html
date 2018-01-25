@@ -14,5 +14,5 @@
   <h4>{{contribution.amountUSD}}</h4>
   <p>{{contribution.comment}}</p>
   <p>{{contribution.$key}}</p>
-  <button *ngIf="currentRoute === '/admin'" (click)="contributionToDelete(projectId, contribution.$key)">Delete</button>
+  <button *ngIf="currentRoute === ('/admin/projects/' + project.$key)" (click)="contributionToDelete(projectId, contribution.$key)">Delete</button>
 </div>
