@@ -22,9 +22,12 @@ export class ProjectsService {
     return this.database.object(`projects/${projectId}`);
   }
 
-  submitContribution(projectId: string, name, amount, comment) {
-    console.log(this.database.object(`projects/${projectId}`)
-    // this.database.object(`projects/${projectId}`).contributions.push({name, amount, comment});
+  getContributionsById(projectId: string) {
+    return this.database.list(`projects/${projectId}/contributions`);
   }
 
+  submitContribution(projectId: string, name, amount, comment) {
+    const contributionsEntryInFirebase = this.getContributionsById(projectId);
+    contributionsEntryInFirebase.push({contributorName: name, comment: comment, amountUSD: amount});
+  }
 }

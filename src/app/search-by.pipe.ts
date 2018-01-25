@@ -27,7 +27,7 @@ export class SearchByPipe implements PipeTransform {
     } else if (filter[0] === "name") {
       for (let project of input) {
         const name = project.name.toLowerCase();
-        if (name.includes(filter[1].toLowerCase()) {
+        if (name.includes(filter[1].toLowerCase())) {
           output.push(project);
         }
       }

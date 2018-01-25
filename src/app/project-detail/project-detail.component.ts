@@ -14,6 +14,7 @@ import { ProjectsService } from '../projects.service';
 })
 export class ProjectDetailComponent implements OnInit {
   project;
+  projectContributions: any[] = [];
   projectId: string;
   selectedProjectKey: string = null;
 
@@ -26,12 +27,16 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.project = this.projectsService.getProjectById(this.projectId);
+    this.projectsService.getProjectById(this.projectId).subscribe(projectLastEmitted => {
+      this.project = projectLastEmitted;
+    });
+    this.projectsService.getContributionsById(this.projectId).subscribe(contributionsLastEmitted => {
+      this.projectContributions = contributionsLastEmitted;
+    })
+
   }
 
   fundButtonClicked() {
     this.selectedProjectKey = this.projectId;
-    console.log(this.selectedProjectKey);
   }
-
 }

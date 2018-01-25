@@ -1,14 +1,16 @@
 <div >
-  <h1>Project : {{(project | async)?.name}}</h1>
-  <h3>Manager : {{(project | async)?.manager}}</h3>
-  <h3>Description : {{(project | async)?.description}}</h3>
+  <h1>Project : {{project?.name}}</h1>
+  <h3>Manager : {{project?.manager}}</h3>
+  <h3>Description : {{project?.description}}</h3>
+  <h3>key : {{project?.$key}}</h3>
+  <div>{{project?.contributions[0].$key}}
 </div>
 <div>
   <button *ngIf="!selectedProjectKey" (click)="fundButtonClicked()">Fund This Project</button>
   <app-project-fund *ngIf="selectedProjectKey" [childSelectedProjectKey]="selectedProjectKey"></app-project-fund>
 </div>
 
-<div *ngFor="let contribution of (project | async)?.contributions">
+<div *ngFor="let contribution of projectContributions">
   <h4>{{contribution.contributorName}}</h4>
   <h4>{{contribution.amountUSD}}</h4>
   <p>{{contribution.comment}}</p>
